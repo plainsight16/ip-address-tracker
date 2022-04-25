@@ -101,6 +101,10 @@ a{
 
 /* ----------UTILITIES--------- */
 
+.m-x{
+    margin-inline: auto;
+}
+
 .flex{
     display:flex;
     gap: var(--gap, 1rem);
@@ -151,7 +155,7 @@ a{
  
 .uppercase{ text-transform: uppercase;}
 
-.txt-center{ text-align: center;}
+.text-center{ text-align: center;}
 
 .lh-2{ line-height: 2;}
 
@@ -171,3 +175,26 @@ a{
 
 /* Border */
 .border-round{ border-radius: var(--border-round);}
+
+
+
+                /* ------COMPONENTS----- */
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+
+
+/*--------------- PAGE STYLES --------------*/
+.grid-container{
+    grid-template-rows: min-content min-content;
+    justify-items: center;
+    align-items: center
+}
+.header{
+    padding-block: 1.875rem;
+    min-height: 25rem;
+}
+
+.header-bg{
+    background-image: url(./images/pattern-bg.png);
+}
