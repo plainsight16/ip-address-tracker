@@ -61,7 +61,6 @@ button{
 }
 
 body{
-    font-family: var(--ff-sans);
     min-height: 100vh;
     line-height: 1.5;
 }
@@ -123,6 +122,7 @@ a{
     display: absolute;
 }
 .container{
+    padding-block: 1.875rem;
     padding-inline: 2rem;
     max-width: 80rem;
     margin-inline: auto;
@@ -184,17 +184,19 @@ a{
 
 
 
-/*--------------- PAGE STYLES --------------*/
+/*--------------- PAGE SPECIFICS --------------*/
+
+body{
+    font-family: var(--ff-sans);
+    background-image: url(./images/pattern-bg.png);
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
 .grid-container{
-    grid-template-rows: min-content min-content;
+    --gap: 1.625rem;
+    grid-template-rows: .5fr 1fr 2fr;
     justify-items: center;
     align-items: center
 }
-.header{
-    padding-block: 1.875rem;
-    min-height: 25rem;
-}
 
-.header-bg{
-    background-image: url(./images/pattern-bg.png);
-}
