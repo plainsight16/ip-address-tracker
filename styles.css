@@ -255,13 +255,16 @@ body{
     .info-display{
         width: 80%;
         flex-direction:row;
+        padding-left: 2rem;
+        padding-block: 2.5rem;
     }
     .info-display > *{
-        justify-content: flex-start;
+        justify-content: center;
         align-items: flex-start;
         --gap: 1rem;
-        column-gap: 1rem;
-        padding: 1rem;
-        border-right: 1px solid hsl(var(--clr-drk-gray));
+        padding-right: 1rem;
+    }
+    .info-display > *:not(:last-child){
+        border-right: 0.5px solid hsl(var(--clr-drk-gray));
     }
 }
