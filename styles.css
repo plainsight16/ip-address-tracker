@@ -111,6 +111,13 @@ a{
     display:flex;
     gap: var(--gap, 1rem);
 }
+.flex-col{
+    flex-direction: column;
+}
+.align-center{
+    justify-content: center;
+    align-items: center;
+}
 .grid{
     display:grid;
     gap: var(--gap, 1rem);
@@ -125,7 +132,6 @@ a{
     display: absolute;
 }
 .container{
-    padding-block: 1.875rem;
     padding-inline: 1rem;
     max-width: 80rem;
     margin-inline: auto;
@@ -211,7 +217,7 @@ body{
 
 .grid-container{
     --gap: 1rem;
-    grid-template-rows: .5fr 1fr 2fr;
+    grid-template-rows: .5fr .5fr 2fr;
     justify-items: center;
     align-items: center
 }
@@ -232,11 +238,13 @@ body{
     
 }
 .info-display{
-    background-color: gray;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 100%;
+}
+.info-display > *{
+    --gap: 0.5rem;
 }
 
 @media(min-width: 35em){
