@@ -238,10 +238,11 @@ body{
     
 }
 .info-display{
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     width: 100%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 .info-display > *{
     --gap: 0.5rem;
@@ -252,6 +253,15 @@ body{
         width: 50%;
     }
     .info-display{
+        width: 80%;
         flex-direction:row;
+    }
+    .info-display > *{
+        justify-content: flex-start;
+        align-items: flex-start;
+        --gap: 1rem;
+        column-gap: 1rem;
+        padding: 1rem;
+        border-right: 1px solid hsl(var(--clr-drk-gray));
     }
 }
