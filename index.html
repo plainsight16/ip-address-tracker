@@ -29,15 +29,33 @@
     
       <form class="input flex flow-space-small">
         <input type="text" value = "Search for any IP address or domain" class="sub-container border-round bg-white text-dark fs-input">
-        <button class="subcontainer bg-dark text-white">
+        <button class="sub-container bg-dark text-white">
           <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14">
             <path fill="none" stroke="#FFF" stroke-width="3" d="M2 1l6 6-6 6"/>
           </svg>
         </button>
       </form>
 
-      <div class="info-display">
+      <div class="info-display flex bg-accent sub-container border-round br-rounded">
+          <div class="flow flow-space-small">
+            <span class="fs-sub-h text-accent fw-b ff-sans letter-spacing-2">IP Address</span>
+            <span id="result"></span>
+          </div>
 
+          <div class="flow flow-space-small">
+            <span class="fs-sub-h text-accent fw-b ff-sans">Location</span>
+            <span id="result"></span>
+          </div>
+
+          <div class="flow flow-space-small">
+            <span class="fs-sub-h text-accent fw-b ff-sans">Timezone</span>
+            <span id="result">UTC - </span>
+          </div>
+
+          <div class="flow flow-space-small">
+            <span class="fs-sub-h text-accent fw-b ff-sans">ISP</span>
+            <span id="result"></span>
+          </div>
       </div>
     </section>
     

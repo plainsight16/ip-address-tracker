@@ -11,7 +11,7 @@
     /* FONT-SIZE */
     --fs-h1: 1.25rem;
     --fs-input: 1rem;
-    --fs-sub-h: 0.625rem;
+    --fs-sub-h: 0.75rem;
     --fs-p: 0.875rem;
 
     /* FONT-WEIGHT */
@@ -53,6 +53,9 @@ blockquote{
     margin: 0;
     padding: 0;
     font-weight: 400;
+}
+span{
+    display:block;
 }
 
 button, input{
@@ -131,7 +134,7 @@ a{
     padding-block: 1.5rem;
     padding-inline: 1rem;
 }
-.flow{
+.flow > *:not(:first-child){
     margin-top: var(--flow-space, 1rem);
 }
 .flow-space-small{
@@ -149,6 +152,8 @@ a{
 
 .fs-h1{ font-size: var(--fs-h1);}
 
+.fs-sub-h{ font-size: var(--fs-sub-h)};
+
 /* font-weights */
 .fw-n{ font-weight: var(--fw-normal);}
 
@@ -163,6 +168,10 @@ a{
 
 .lh-2{ line-height: 2;}
 
+.letter-spacing-2{
+    letter-spacing: 0.2rem;
+}
+
 /* text-color */
 .text-white{ color: hsl(var(--clr-white))};
 
@@ -171,7 +180,7 @@ a{
 .text-dark{ color: hsl(var(--clr-very-drk-gray))};
 
 /* bg-color */
-.bg-dark{ background: hsl(var(--clr-very-drk-gray));}
+.bg-dark{ background-color: hsl(var(--clr-very-drk-gray));}
 
 .bg-white{ background-color: hsl(var(--clr-white));}
 
@@ -201,7 +210,7 @@ body{
 }
 
 .grid-container{
-    --gap: 1.625rem;
+    --gap: 1rem;
     grid-template-rows: .5fr 1fr 2fr;
     justify-items: center;
     align-items: center
@@ -222,9 +231,19 @@ body{
     border-radius: 0 var(--border-round) var(--border-round) 0;
     
 }
+.info-display{
+    background-color: gray;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
 
 @media(min-width: 35em){
     .input input{
         width: 50%;
+    }
+    .info-display{
+        flex-direction:row;
     }
 }
