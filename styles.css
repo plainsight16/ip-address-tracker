@@ -249,6 +249,9 @@ body{
 }
 
 @media(min-width: 35em){
+    .container{
+        padding-block: 1rem;
+    }
     .input input{
         width: 50%;
     }
