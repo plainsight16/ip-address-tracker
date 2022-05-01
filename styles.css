@@ -277,3 +277,6 @@ body{
         font-size: clamp(0.2rem, 2vw, var(--fs-p));
     }
 }
+#map{
+    height: 160px;
+}
