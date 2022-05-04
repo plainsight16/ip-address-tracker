@@ -33,6 +33,7 @@ const generateMap = (data) =>{
     });
     
     L.marker([51.5, -0.09], {icon: locationIcon}).addTo(map);
+    
     L.circle([lat, -lng], {
         color: 'red',
         fillColor: '#f03',
