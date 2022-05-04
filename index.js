@@ -25,6 +25,20 @@ let mapLocation = {
         }).addTo(map);
 
         L.marker([51.5, -0.09]).addTo(map);
+    },
+
+    search: function(){
+        const input = document.querySelector("#input");
+        console.log(input.value);
+        this.getLocation(input.value);
     }
 }
-mapLocation.getLocation("129.205.124.230");
+//mapLocation.getLocation("129.205.124.230");
+
+const submitBtn = document.querySelector("#submitBtn");
+
+
+submitBtn.addEventListener("click", () =>{
+    mapLocation.search();
+
+})
