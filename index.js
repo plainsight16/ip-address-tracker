@@ -1,18 +1,22 @@
 let mapLocation = {
-    apikey: 'at_6LDGx376YFUU95TGL54y3ftV7SRae',
 
-    getLocation: function(ipAddress) {
+    getLocation: function(domainName) {
+        const apikey = 'at_6LDGx376YFUU95TGL54y3ftV7SRae';
+
         fetch('https://geo.ipify.org/api/v2/country,city?apiKey='
-        +this.apikey
-        +'&ipAddress='
-        +ipAddress
+        +apikey
+        +'&ipAddress=&domain='
+        +domainName
         )
         .then(response => response.json())
-        .then(data => this.generateMap(data.location))
+        .then(data => {
+            this.displayInfo(data);
+            this.generateMap(data);
+        })
     },
 
     generateMap: function(data){
-        const {lat, lng} = data;
+        const {lat, lng} = data.location;
         const map = L.map('map').setView([lat, lng], 13);
 
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -29,8 +33,19 @@ let mapLocation = {
 
     search: function(){
         const input = document.querySelector("#input");
-        console.log(input.value);
         this.getLocation(input.value);
+    },
+
+    displayInfo: function(data){
+        console.log(data);
+        const {ip, isp} = data;
+        const {region, city, postalCode, timezone} = data.location;
+
+        document.getElementById("IP").textContent = ip;
+        document.getElementById("location").textContent = `${region}, ${city} ${postalCode}`;
+        document.getElementById("Timezone").textContent = "UTC " + timezone;
+        document.getElementById("ISP").textContent = isp;
+        
     }
 }
 //mapLocation.getLocation("129.205.124.230");
