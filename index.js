@@ -11,6 +11,9 @@ const getLocation = (domainName) => {
         displayInfo(data);
         generateMap(data);
     })
+    .catch(err =>{
+        alert("Input valid domain or IP");
+    })
 };
 
 const generateMap = (data) =>{
