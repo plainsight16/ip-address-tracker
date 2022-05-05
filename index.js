@@ -15,9 +15,11 @@ const getLocation = (domainName) => {
 
 const generateMap = (data) =>{
     resetMap();
-    
+
     const {lat, lng} = data.location;
-    const map = L.map('map').setView([lat, lng], 13);
+    const map = L.map('map', {
+        center: [lat, lng]
+    }).setView([lat, lng], 13);
 
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -35,13 +37,6 @@ const generateMap = (data) =>{
     });
     
     L.marker([51.5, -0.09], {icon: locationIcon}).addTo(map);
-    
-    L.circle([lat, -lng], {
-        color: 'red',
-        fillColor: '#f03',
-        fillOpacity: 0.5,
-        radius: 500
-    }).addTo(map);
 };
 
 const search = () =>{
@@ -68,6 +63,11 @@ const resetMap = () =>{
     }
 }
 
+const defaultdisplay = () =>{
+    getLocation('');
+}
+
+defaultdisplay();
 
 const submitBtn = document.querySelector("#submitBtn");
 const input = document.querySelector("#input");

@@ -126,10 +126,10 @@ a{
     display:block;
 }
 .relative{
-    display: relative;
+    position: relative;
 }
 .absolute{
-    display: absolute;
+    position: absolute;
 }
 .container{
     padding-inline: 1rem;
@@ -248,6 +248,13 @@ body{
     --gap: 0.25rem;
 }
 
+#map{
+    height: 100%;
+    width: 100%;
+    top: 250px;
+    z-index: -1;
+}
+
 @media(min-width: 35em){
     .container{
         padding-block: 1rem;
@@ -277,6 +284,4 @@ body{
         font-size: clamp(0.2rem, 2vw, var(--fs-p));
     }
 }
-#map{
-    height: 180px;
-}
+
