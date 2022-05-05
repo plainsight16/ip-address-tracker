@@ -14,15 +14,9 @@ const getLocation = (domainName) => {
 };
 
 const generateMap = (data) =>{
+    resetMap();
+    
     const {lat, lng} = data.location;
-    
-    //reset map
-    const container = L.DomUtil.get('map');
-    
-    if(container != null){
-    container._leaflet_id = null;
-    }
-
     const map = L.map('map').setView([lat, lng], 13);
 
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -66,9 +60,12 @@ const displayInfo = (data) =>{
     document.getElementById("ISP").textContent = isp;
 };
 
-const resetMap = (map) =>{
-    map.off();
-    map.remove();
+const resetMap = () =>{
+    const container = L.DomUtil.get('map');
+
+    if(container != null){
+    container._leaflet_id = null;
+    }
 }
 
 
