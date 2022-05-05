@@ -15,7 +15,7 @@ const getLocation = (domainName) => {
 
 const generateMap = (data) =>{
     const {lat, lng} = data.location;
-    let map = L.map('map').setView([lat, lng], 13);
+    const map = L.map('map').setView([lat, lng], 13);
 
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -58,10 +58,20 @@ const displayInfo = (data) =>{
     document.getElementById("ISP").textContent = isp;
 };
 
+const resetMap = (map) =>{
+    map.off();
+    map.remove();
+}
+
 
 const submitBtn = document.querySelector("#submitBtn");
-
+const input = document.querySelector("#input");
 
 submitBtn.addEventListener("click", () =>{
     search();
 })
+
+input.addEventListener("keyup", (event) =>{
+    if(event.key == "Enter")
+        search();
+}) 
